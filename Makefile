@@ -6,7 +6,7 @@
 # on another system/architecture.
 
 # List of available ports
-PORTS = mingw32 nosdl nosdl32 linux linux32
+PORTS = mingw32 nosdl nosdl32 linux linux32 miyoo
 
 help:
 	@echo
