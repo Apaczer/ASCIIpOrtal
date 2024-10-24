@@ -332,7 +332,9 @@ int display_main_menu (MapPack &mappack) {
   options.push_back("Select Level");
   options.push_back("Change Map Set");
   options.push_back("Instructions");
+#ifndef __DINGOO__
   options.push_back("Credits");
+#endif
   options.push_back("QUIT");
 
   int opt=menu(options, 0);
@@ -393,8 +395,10 @@ int main_menu(MapPack& mappack) {
       break;
     case 3: // Instructions
       help_menu (); break;
+#ifndef __DINGOO__
     case 4: // Credits
       roll_credits (mappack); break;
+#endif
     default: // QUIT
       return -1;
   }

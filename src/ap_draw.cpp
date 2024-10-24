@@ -222,7 +222,9 @@ bool displaystats (level const & lvl) {
   mvprintw (upperleft.y + 6, (COLS - 18) / 2, "%d Portals Used", lvl.stats.numportals);
   mvprintw (upperleft.y + 7, (COLS - 18) / 2, "%d Deaths/Restarts", lvl.stats.numdeaths);
 
+#ifndef __DINGOO__
   mvprintw (upperleft.y + 10, (COLS - 16) / 2, "Press R to Retry");
+#endif
   mvprintw (upperleft.y + 11, (COLS - 19) / 2, "Any Key to Continue");
 
   refresh ();
