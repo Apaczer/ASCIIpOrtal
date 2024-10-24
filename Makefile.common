@@ -15,7 +15,7 @@ CXXFLAGS = -O2 -DAP_VERSION=\"$(AP_VERSION)\"
 LINKFLAGS = -l yaml-cpp
 
 # Files to include in releases
-FILES_INCLUDE_DIST = maps/ media/ README CONTRIBUTE COPYING CHANGELOG pdcicon.bmp map_making_tips.txt
+FILES_INCLUDE_DIST = maps/ media/ LICENSE pdcicon.bmp map_making_tips.md # README CONTRIBUTE COPYING CHANGELOG
 
 # Files to include in source tarball
 FILES_INCLUDE_SRC = $(FILES_INCLUDE_DIST) media-src/ src/ debian/ INSTALL TODO Doxyfile Makefile Makefile.*
