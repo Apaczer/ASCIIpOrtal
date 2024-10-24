@@ -85,9 +85,15 @@ void help_menu () {
     "Left/Right ........ Move Left/Right",
     "Up/Down ........... Move Up/Down Ladders",
     "                    or adjust aim.",
+#ifdef __MIYOO__
+    "R Shoulder/B....... Fire Blue Portal",
+    "L Shoulder/Y....... Fire Yellow Portal",
+    "A ................. Fire 'Next' Portal",
+#else
     "R Shoulder/A....... Fire Blue Portal",
     "L Shoulder/Y....... Fire Yellow Portal",
     "B ................. Fire 'Next' Portal",
+#endif
     "X ................. Cancel Portals",
     "",
     "Start ............. Menu",

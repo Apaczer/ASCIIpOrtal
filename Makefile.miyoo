@@ -18,7 +18,7 @@ DISTNAME := $(DISTNAME)-$(PORT)64
 
 # Custom C flags: you may define ('-D') or unset ('-U') macros to get your specific
 # code to work.
-CXXFLAGS := $(CXXFLAGS) -IPDCurses -IPDCurses/sdl1 -I$(SYSROOT)/usr/include/xcurses $(shell $(SYSROOT)/../../usr/bin/pkg-config --cflags sdl SDL_mixer) -U__NOSDL__ -U__NOSOUND__ -D__DINGOO__ -U__GP2X__
+CXXFLAGS := $(CXXFLAGS) -IPDCurses -IPDCurses/sdl1 -I$(SYSROOT)/usr/include/xcurses $(shell $(SYSROOT)/../../usr/bin/pkg-config --cflags sdl SDL_mixer) -U__NOSDL__ -U__NOSOUND__ -D__DINGOO__ -D__MIYOO__ -U__GP2X__
 
 # Custom link flags: either dynamic (default) or static linking (see the last form,
 # 'man ld' for details).

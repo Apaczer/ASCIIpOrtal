@@ -221,10 +221,17 @@ int processevent () { // Convert keys down to PDC key commands. Introduces prior
         case SDLK_DOWN: key = KEY_DOWN; break;
         case SDLK_LEFT: key = KEY_LEFT; break;
         case SDLK_RIGHT: key = KEY_RIGHT; break;
+#ifdef __MIYOO__
+        case SDLK_LALT: key = ' '; break; // A key (right)
+        case SDLK_LCTRL: key = 'z'; break; // B key (down)
+        case SDLK_LSHIFT: key = 'c'; break; // X key (up)
+        case SDLK_SPACE: key = 'x'; break; // Y key (left)
+#else
         case SDLK_LCTRL: key = 'z'; break; // A key (right)
         case SDLK_LALT: key = ' '; break; // B key (down)
         case SDLK_SPACE: key = 'c'; break; // X key (up)
         case SDLK_LSHIFT: key = 'x'; break; // Y key (left)
+#endif
         case SDLK_TAB: key = 'x'; break; // Left Shoulder
         case SDLK_BACKSPACE: key = 'z'; break; // Right Shoulder
         case SDLK_RETURN: key = KEY_F(1); break; // Start button
