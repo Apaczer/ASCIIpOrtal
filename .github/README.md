@@ -30,6 +30,7 @@ cd /src
 make -j$(nproc) miyoo
 exit
 ```
+you can create ipk pkg by passing `IPK=yes` flag to make
 - native build (PC-Linux)  
 ```
 make -j$(nproc) linux

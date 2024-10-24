@@ -14,7 +14,7 @@ PORT = miyoo
 
 # Custom base name for release (tarball). Keeping '-$(PORT)' is generally a good option,
 # but feel free to change it.
-DISTNAME := $(DISTNAME)-$(PORT)64
+DISTNAME := $(DISTNAME)-$(PORT)
 
 # Custom C flags: you may define ('-D') or unset ('-U') macros to get your specific
 # code to work.
@@ -25,7 +25,7 @@ CXXFLAGS := $(CXXFLAGS) -IPDCurses -IPDCurses/sdl1 -I$(SYSROOT)/usr/include/xcur
 LINKFLAGS := $(LINKFLAGS) $(shell $(SYSROOT)/../../usr/bin/pkg-config --libs sdl SDL_mixer) -LPDCurses/sdl1 -lpdcurses -lSDL #libpdcurses.a is built against libSDL
 
 # Additional files to be included in release tarball.
-#FILES_INCLUDE_DIST := $(FILES_INCLUDE_DIST) custom_readme.txt example.dll foo/bar.xml
+#FILES_INCLUDE_DIST := $(FILES_INCLUDE_DIST) asciiportal.man.txt
 
 
 ### Required variables ###
@@ -63,6 +63,16 @@ wrong-way:
 $(PORT):
 	$(MAKE) -f Makefile.$(PORT) clean execlean
 	$(MAKE) -f Makefile.$(PORT) $(EXE_NAME)
+ifeq ($(IPK),yes)
+	mkdir $(DISTNAME)
+	cp -r $(FILES_INCLUDE_DIST) $(DISTNAME)
+	mv $(DISTNAME)/pdcicon.bmp $(DISTNAME)/asciiportal.bmp
+	mv $(DISTNAME)/map_making_tips.md $(DISTNAME)/map_making_tips.txt
+	gm2xpkg -q -i -c miyoo-pkg.cfg
+	rm -rf $(DISTNAME)
+	@echo
+	@echo "[*] $(EXE_NAME).ipk successfully generated."
+endif
 	$(MAKE) -f Makefile.$(PORT) clean
 
 dist:
