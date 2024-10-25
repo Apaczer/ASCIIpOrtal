@@ -2,6 +2,10 @@
 
 ASCIIpOrtal is a text based puzzle game in 2D (SDL).
 
+### Dependencies:
+
+C++ compiler (GCC), SDL1.2 (libsdl1.2-dev), SDLmixer (libsdl-mixer1.2-dev), yaml-cpp (libyaml-cpp-dev), PDCurses (libpdcurses - see submodule)
+
 ### Build steps:
 #### - initialize submodules  
 ```
